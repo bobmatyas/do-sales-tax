@@ -4,9 +4,15 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Catalog from './components/Catalog'
-import Cart from "./components/cart"
+import Cart from './components/Cart'
+import { useCart } from './CatalogProvider'
+import styled from 'styled-components';
 
-import { useCart } from "./CatalogProvider";
+const CartWrapper = styled.div`
+  @media (min-width: 768px) {
+    position: fixed;
+  }
+`;
 
 function App() {
 
@@ -17,13 +23,19 @@ function App() {
       <Row>
         <Col xs={{ order: 2 }} sm={{order: 1}} md={8}>
           <Catalog />
-      </Col>
-        <Col xs={{ order: 1 }} md={4}>
+        </Col>
+        <Col xs={{ order: 1 }} md={4} style={{paddingTop: '10px'}}>        
+        <CartWrapper>
           { cart.length > 0 ? <Cart items={ cart } /> : "" }
+          </CartWrapper>
+
         </Col>
       </Row>
     </Container>
   );
+
+
+
 }
 
 export default App;

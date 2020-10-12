@@ -1,11 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
-import AddButton from './button-add';
+import AddButton from './Button-Add';
+import { useCart } from "../CatalogProvider";
 
 
 import 'holderjs';
 
 function Item({ title, price, taxable, imported }) {
+
+    const { formatCurrency } = useCart();    
 
     return (
         <Card style={{ minWidth: '225px', maxWidth: '225px', margin: '10px 5px' }}>
@@ -14,7 +17,7 @@ function Item({ title, price, taxable, imported }) {
                 <Card.Title> { title } </Card.Title>
                 <Card.Text className="text-muted">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                    <br /><br /><strong>${price}</strong>
+                    <br /><br /><strong>{formatCurrency.format(price)}</strong>
                 </Card.Text>
                 <AddButton
                     item={title}

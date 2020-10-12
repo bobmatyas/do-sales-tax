@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from "./item";
+import Item from "./Item";
 import catalogData from '../data/catalog.json';
 import CardDeck from 'react-bootstrap/CardDeck'
 

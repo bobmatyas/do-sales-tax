@@ -14,6 +14,12 @@ export default function CatalogProvider ({ children }) {
     const [subTotal, setTotal] = useState(0);
     const [taxes, setTaxes] = useState(0);
 
+    const formatCurrency = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+    });
+
     const calculateTaxes = (price, taxable, imported) => {
         if (taxable === 1 && imported === 0) {
             updateTaxes(roundAmount(price * .10));
@@ -74,7 +80,7 @@ export default function CatalogProvider ({ children }) {
 
 
     return (
-        <CatalogContext.Provider value={{ addToCart, cart, taxes, subTotal }} >
+        <CatalogContext.Provider value={{ addToCart, cart, taxes, subTotal, formatCurrency }} >
             {children}
         </CatalogContext.Provider>
     );

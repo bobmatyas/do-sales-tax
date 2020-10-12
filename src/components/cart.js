@@ -7,12 +7,7 @@ function Cart ({ items }) {
     
     const { subTotal } = useCart();
     const { taxes } = useCart();
-
-    const formatCurrency = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2
-      })
+    const { formatCurrency } = useCart();    
     
     return(
         <>
