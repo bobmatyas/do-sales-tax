@@ -1,42 +1,47 @@
 [
     { "item": "Book",
       "price": 12.49,
-      "taxable": true,
-      "imported": false
+      "taxable": 0,
+      "imported": 0
     },
     { "item": "Music CD",
       "price": 14.99,
-      "taxable": true,
-      "imported": false
+      "taxable": 1,
+      "imported": 0
     },   
     { "item": "Chocolate bar",
       "price": 0.85,
-      "taxable": false,
-      "imported": false
+      "taxable": 0,
+      "imported": 0
     },
     { "item": "Imported box of chocolates - Milk",
       "price": 10.00,
-      "taxable": false,
-      "imported": true
+      "taxable": 0,
+      "imported": 1
     },
     { "item": "Imported box of chocolates - Dark",
       "price": 11.25,
-      "taxable": false,
-      "imported": true
+      "taxable": 0,
+      "imported": 1
     },
     { "item": "Imported bottle of perfume - Lavendar",
       "price": 47.50,
-      "taxable": false,
-      "imported": true
+      "taxable": 1,
+      "imported": 1
     }, 
     { "item": "Imported bottle of perfume - Rose",
+        "price": 27.99,
+        "taxable": 1,
+        "imported": 1
+      }, 
+    { "item": "Perfume - Lilac",
       "price": 18.99,
-      "taxable": false,
-      "imported": true
+      "taxable": 1,
+      "imported": 0
     },          
     { "item": "Packet of headache pills",
       "price": 9.75,
-      "taxable": false,
-      "imported": true
+      "taxable": 0,
+      "imported": 0
     }         
 ]

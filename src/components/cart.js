@@ -5,9 +5,15 @@ import Table from 'react-bootstrap/Table';
 
 function Cart ({ items }) {
     
-
     const { subTotal } = useCart();
+    const { taxes } = useCart();
 
+    const formatCurrency = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
+    
     return(
         <>
         <h3 className="h4">Cart</h3>
@@ -23,13 +29,15 @@ function Cart ({ items }) {
         {items.map((item, i) => (
             <tr key={i}>
                 <td>{item.item}</td>
-                <td>${item.price}</td>
+                <td>{formatCurrency.format(item.priceTaxes)}</td>
             </tr>
         ))}
         </tbody>
         </Table>
 
-        <p>{subTotal} </p>
+        <p><strong>Sales Tax:</strong> { taxes > 0  ? formatCurrency.format(taxes) : "-" }</p>
+        <p><strong>Total:</strong> {formatCurrency.format(subTotal)} </p>
+
         </>
     )
 

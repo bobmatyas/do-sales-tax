@@ -5,7 +5,7 @@ import AddButton from './button-add';
 
 import 'holderjs';
 
-function Item({ title, price, imported, taxable }) {
+function Item({ title, price, taxable, imported }) {
 
     return (
         <Card style={{ minWidth: '225px', maxWidth: '225px', margin: '10px 5px' }}>
@@ -19,6 +19,8 @@ function Item({ title, price, imported, taxable }) {
                 <AddButton
                     item={title}
                     price={price} 
+                    taxable={taxable}
+                    imported={imported}
                 />
             </Card.Body>
         </Card>
